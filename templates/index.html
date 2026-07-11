@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Landing Templates — 3 layouts</title>
+<style>
+  body { margin: 0; font-family: ui-sans-serif, system-ui; background: #fbfafd; color: #0c0a1a; }
+  header { padding: 48px 24px; max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 36px; margin: 0 0 8px; }
+  p { color: #6b6680; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; max-width: 1100px; margin: 0 auto; padding: 24px; }
+  .card { background: white; border: 1px solid #ece9f5; border-radius: 16px; overflow: hidden; }
+  .card .thumb { height: 240px; border-bottom: 1px solid #ece9f5; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #6b6680; background: #fbfafd; }
+  .card .meta { padding: 16px; }
+  .card h3 { margin: 0 0 4px; }
+  .card a { color: #4f46e5; text-decoration: none; font-weight: 600; }
+  iframe { width: 100%; height: 240px; border: 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>3 Landing Templates</h1>
+  <p>Pick a layout. Drop in your copy. Ship today.</p>
+</header>
+<div class="grid">
+  <div class="card"><div class="thumb"><iframe src="html/minimal.html"></iframe></div><div class="meta"><h3>Minimal</h3><a href="html/minimal.html" target="_blank">Open ↗</a> · <a href="jsx/Minimal.jsx">JSX</a></div></div>
+  <div class="card"><div class="thumb"><iframe src="html/bold.html"></iframe></div><div class="meta"><h3>Bold</h3><a href="html/bold.html" target="_blank">Open ↗</a> · <a href="jsx/Bold.jsx">JSX</a></div></div>
+  <div class="card"><div class="thumb"><iframe src="html/magazine.html"></iframe></div><div class="meta"><h3>Magazine</h3><a href="html/magazine.html" target="_blank">Open ↗</a> · <a href="jsx/Magazine.jsx">JSX</a></div></div>
+</div>
+</body>
+</html>

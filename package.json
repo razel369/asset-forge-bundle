@@ -1,0 +1,19 @@
+{
+  "name": "indie-icon-pack",
+  "version": "1.0.0",
+  "private": true,
+  "description": "60 hand-tuned SVG icons for indie hackers. Single-color, stroke-based, 24x24.",
+  "scripts": {
+    "build:icons": "node scripts/generate-icons.mjs",
+    "build:site": "node scripts/build-site.mjs",
+    "build": "node scripts/generate-icons.mjs && node scripts/build-site.mjs",
+    "dev": "node scripts/build-site.mjs && http-server site -p 4173 -c-1"
+  },
+  "license": "SEE LICENSE.md",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}
