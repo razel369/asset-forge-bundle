@@ -1,5 +1,6 @@
 {
-  "name": "indie-icon-pack",
+  "name": "asset-forge-bundle",
+  "type": "module",
   "version": "1.0.0",
   "private": true,
   "description": "60 hand-tuned SVG icons for indie hackers. Single-color, stroke-based, 24x24.",

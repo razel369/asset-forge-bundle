@@ -1,0 +1,18 @@
+# Asset Forge
+
+> 75 design assets (60 icons + 12 illustrations + 3 landing templates) authored by an AI under tight constraints. MIT for open-source use, $29 for commercial.
+
+## Categories
+- Icons (60): tech, business, finance, dev, marketing, ai
+- Illustrations (12): empty-state, hero scenes
+- Templates (3): Minimal, Bold, Magazine — HTML + JSX
+
+## Pricing
+- Open-source: MIT, free
+- Indie Pack: $29 one-time, ≤ 5 devs
+- Studio Pack: $99 one-time, unlimited
+- Mega Pack: $149, all + variants + roadmap influence
+
+## Repos
+- Repo: https://github.com/razel369/asset-forge-bundle
+- Releases: https://github.com/razel369/asset-forge-bundle/releases

@@ -5,8 +5,20 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Asset Forge — design assets for indie hackers</title>
 <meta name="description" content="60 icons · 12 illustrations · 3 landing templates. Made by an AI under tight constraints. MIT for open-source, $29 for commercial.">
-<link rel="stylesheet" href="data:text/css,%0A%20%20%3Aroot%20%7B%20color-scheme%3A%20light%3B%20--ink%3A%230c0a1a%3B%20--muted%3A%236b6680%3B%20--line%3A%23ece9f5%3B%20--bg%3A%23fbfafd%3B%20--accent%3A%234f46e5%3B%20--soft%3A%23ede9fe%3B%20%7D%0A%20%20*%20%7B%20box-sizing%3A%20border-box%3B%20%7D%0A%20%20body%20%7B%20margin%3A%200%3B%20font-family%3A%20ui-sans-serif%2C%20system-ui%2C%20-apple-system%2C%20%22Segoe%20UI%22%2C%20sans-serif%3B%20color%3A%20var(--ink)%3B%20background%3A%20var(--bg)%3B%20line-height%3A%201.55%3B%20%7D%0A%20%20.wrap%20%7B%20max-width%3A%201120px%3B%20margin%3A%200%20auto%3B%20padding%3A%200%2024px%3B%20%7D%0A%20%20header.hero%20%7B%20padding%3A%2072px%200%2048px%3B%20border-bottom%3A%201px%20solid%20var(--line)%3B%20%7D%0A%20%20.pill%20%7B%20display%3A%20inline-block%3B%20font-size%3A%2012px%3B%20padding%3A%204px%2010px%3B%20border-radius%3A%20999px%3B%20background%3A%20var(--soft)%3B%20color%3A%20var(--accent)%3B%20font-weight%3A%20600%3B%20%7D%0A%20%20h1%20%7B%20font-size%3A%20clamp(40px%2C%206vw%2C%2064px)%3B%20margin%3A%2018px%200%2014px%3B%20line-height%3A%201.05%3B%20letter-spacing%3A%20-0.025em%3B%20%7D%0A%20%20.lede%20%7B%20font-size%3A%2018px%3B%20color%3A%20var(--muted)%3B%20max-width%3A%20700px%3B%20%7D%0A%20%20h2%20%7B%20font-size%3A%2032px%3B%20letter-spacing%3A%20-0.02em%3B%20margin%3A%200%200%208px%3B%20%7D%0A%20%20.sub%20%7B%20color%3A%20var(--muted)%3B%20margin%3A%200%200%2032px%3B%20%7D%0A%20%20section%20%7B%20padding%3A%2064px%200%3B%20border-bottom%3A%201px%20solid%20var(--line)%3B%20%7D%0A%20%20.grid-icons%20%7B%20display%3A%20grid%3B%20grid-template-columns%3A%20repeat(auto-fill%2C%20minmax(96px%2C%201fr))%3B%20gap%3A%208px%3B%20%7D%0A%20%20.grid-ill%20%7B%20display%3A%20grid%3B%20grid-template-columns%3A%20repeat(auto-fill%2C%20minmax(180px%2C%201fr))%3B%20gap%3A%2016px%3B%20%7D%0A%20%20.cell%20%7B%20display%3A%20flex%3B%20flex-direction%3A%20column%3B%20align-items%3A%20center%3B%20justify-content%3A%20center%3B%20padding%3A%2014px%206px%3B%20border%3A%201px%20solid%20var(--line)%3B%20border-radius%3A%2012px%3B%20background%3A%20white%3B%20%7D%0A%20%20.cell%20svg%20%7B%20width%3A%2026px%3B%20height%3A%2026px%3B%20color%3A%20var(--ink)%3B%20%7D%0A%20%20.cell%20.lbl%20%7B%20font-size%3A%2011px%3B%20color%3A%20var(--muted)%3B%20margin-top%3A%208px%3B%20font-family%3A%20ui-monospace%2C%20monospace%3B%20%7D%0A%20%20.ill%20%7B%20padding%3A%2016px%3B%20border%3A%201px%20solid%20var(--line)%3B%20border-radius%3A%2016px%3B%20background%3A%20white%3B%20%7D%0A%20%20.ill%20svg%20%7B%20width%3A%20100%25%3B%20height%3A%20auto%3B%20max-height%3A%20160px%3B%20color%3A%20var(--ink)%3B%20%7D%0A%20%20.ill%20.lbl%20%7B%20font-size%3A%2012px%3B%20color%3A%20var(--muted)%3B%20margin-top%3A%208px%3B%20font-family%3A%20ui-monospace%2C%20monospace%3B%20%7D%0A%20%20.templates%20%7B%20display%3A%20grid%3B%20grid-template-columns%3A%20repeat(auto-fit%2C%20minmax(300px%2C%201fr))%3B%20gap%3A%2016px%3B%20%7D%0A%20%20.tpl%20%7B%20border%3A%201px%20solid%20var(--line)%3B%20border-radius%3A%2016px%3B%20overflow%3A%20hidden%3B%20background%3A%20white%3B%20%7D%0A%20%20.tpl%20.thumb%20%7B%20height%3A%20200px%3B%20border-bottom%3A%201px%20solid%20var(--line)%3B%20%7D%0A%20%20.tpl%20iframe%20%7B%20width%3A%20100%25%3B%20height%3A%20100%25%3B%20border%3A%200%3B%20%7D%0A%20%20.tpl%20.meta%20%7B%20padding%3A%2014px%2018px%3B%20display%3A%20flex%3B%20justify-content%3A%20space-between%3B%20align-items%3A%20center%3B%20%7D%0A%20%20.tpl%20h3%20%7B%20margin%3A%200%3B%20font-size%3A%2016px%3B%20%7D%0A%20%20.tpl%20a%20%7B%20color%3A%20var(--accent)%3B%20text-decoration%3A%20none%3B%20font-size%3A%2013px%3B%20font-weight%3A%20600%3B%20%7D%0A%20%20.pricing%20%7B%20display%3A%20grid%3B%20grid-template-columns%3A%20repeat(3%2C%201fr)%3B%20gap%3A%2016px%3B%20%7D%0A%20%20%40media%20(max-width%3A%20720px)%20%7B%20.pricing%20%7B%20grid-template-columns%3A%201fr%3B%20%7D%20%7D%0A%20%20.tier%20%7B%20border%3A%201px%20solid%20var(--line)%3B%20border-radius%3A%2016px%3B%20padding%3A%2024px%3B%20background%3A%20white%3B%20%7D%0A%20%20.tier%20h3%20%7B%20margin%3A%200%3B%20%7D%0A%20%20.tier%20.price-big%20%7B%20font-size%3A%2032px%3B%20font-weight%3A%20700%3B%20margin%3A%2012px%200%208px%3B%20letter-spacing%3A%20-0.02em%3B%20%7D%0A%20%20.tier%20ul%20%7B%20padding-left%3A%2018px%3B%20color%3A%20var(--muted)%3B%20font-size%3A%2014px%3B%20%7D%0A%20%20.tier%20li%20%7B%20margin%3A%205px%200%3B%20%7D%0A%20%20footer%20%7B%20padding%3A%2048px%200%3B%20color%3A%20var(--muted)%3B%20font-size%3A%2014px%3B%20text-align%3A%20center%3B%20%7D%0A">
+<meta name="keywords" content="svg icons, illustrations, landing templates, indie hackers, design assets, saas">
+<meta name="author" content="Asset Forge Agent">
+<meta property="og:title" content="Asset Forge — 75 design assets for indie builders">
+<meta property="og:description" content="60 SVG icons, 12 illustrations, 3 landing templates. Hand-tuned by an AI, MIT for open-source, $29 for commercial.">
+<meta property="og:image" content="og/og-bundle.svg">
+<meta property="og:url" content="https://github.com/razel369/asset-forge-bundle">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Asset Forge — 75 design assets">
+<meta name="twitter:description" content="60 SVG icons, 12 illustrations, 3 landing templates. $29 Indie Pack.">
+<meta name="twitter:image" content="og/og-bundle.svg">
+<link rel="stylesheet" href="data:text/css,%0A%20%20%3Aroot%20%7B%20color-scheme%3A%20light%3B%20--ink%3A%230c0a1a%3B%20--muted%3A%236b6680%3B%20--line%3A%23ece9f5%3B%20--bg%3A%23fbfafd%3B%20--accent%3A%234f46e5%3B%20--soft%3A%23ede9fe%3B%20%7D%0A%20%20*%20%7B%20box-sizing%3A%20border-box%3B%20%7D%0A%20%20body%20%7B%20margin%3A%200%3B%20font-family%3A%20ui-sans-serif%2C%20system-ui%2C%20-apple-system%2C%20%22Segoe%20UI%22%2C%20sans-serif%3B%20color%3A%20var(--ink)%3B%20background%3A%20var(--bg)%3B%20line-height%3A%201.55%3B%20%7D%0A%20%20.wrap%20%7B%20max-width%3A%201120px%3B%20margin%3A%200%20auto%3B%20padding%3A%200%2024px%3B%20%7D%0A%20%20header.hero%20%7B%20padding%3A%2072px%200%2048px%3B%20border-bottom%3A%201px%20solid%20var(--line)%3B%20%7D%0A%20%20.pill%20%7B%20display%3A%20inline-block%3B%20font-size%3A%2012px%3B%20padding%3A%204px%2010px%3B%20border-radius%3A%20999px%3B%20background%3A%20var(--soft)%3B%20color%3A%20var(--accent)%3B%20font-weight%3A%20600%3B%20%7D%0A%20%20h1%20%7B%20font-size%3A%20clamp(40px%2C%206vw%2C%2064px)%3B%20margin%3A%2018px%200%2014px%3B%20line-height%3A%201.05%3B%20letter-spacing%3A%20-0.025em%3B%20%7D%0A%20%20.lede%20%7B%20font-size%3A%2018px%3B%20color%3A%20var(--muted)%3B%20max-width%3A%20700px%3B%20%7D%0A%20%20h2%20%7B%20font-size%3A%2032px%3B%20letter-spacing%3A%20-0.02em%3B%20margin%3A%200%200%208px%3B%20%7D%0A%20%20.sub%20%7B%20color%3A%20var(--muted)%3B%20margin%3A%200%200%2032px%3B%20%7D%0A%20%20section%20%7B%20padding%3A%2064px%200%3B%20border-bottom%3A%201px%20solid%20var(--line)%3B%20%7D%0A%20%20.grid-icons%20%7B%20display%3A%20grid%3B%20grid-template-columns%3A%20repeat(auto-fill%2C%20minmax(96px%2C%201fr))%3B%20gap%3A%208px%3B%20%7D%0A%20%20.grid-ill%20%7B%20display%3A%20grid%3B%20grid-template-columns%3A%20repeat(auto-fill%2C%20minmax(180px%2C%201fr))%3B%20gap%3A%2016px%3B%20%7D%0A%20%20.cell%20%7B%20display%3A%20flex%3B%20flex-direction%3A%20column%3B%20align-items%3A%20center%3B%20justify-content%3A%20center%3B%20padding%3A%2014px%206px%3B%20border%3A%201px%20solid%20var(--line)%3B%20border-radius%3A%2012px%3B%20background%3A%20white%3B%20%7D%0A%20%20.cell%20svg%20%7B%20width%3A%2026px%3B%20height%3A%2026px%3B%20color%3A%20var(--ink)%3B%20%7D%0A%20%20.cell%20.lbl%20%7B%20font-size%3A%2011px%3B%20color%3A%20var(--muted)%3B%20margin-top%3A%208px%3B%20font-family%3A%20ui-monospace%2C%20monospace%3B%20%7D%0A%20%20.ill%20%7B%20padding%3A%2016px%3B%20border%3A%201px%20solid%20var(--line)%3B%20border-radius%3A%2016px%3B%20background%3A%20white%3B%20%7D%0A%20%20.ill%20svg%20%7B%20width%3A%20100%25%3B%20height%3A%20auto%3B%20max-height%3A%20160px%3B%20color%3A%20var(--ink)%3B%20%7D%0A%20%20.ill%20.lbl%20%7B%20font-size%3A%2012px%3B%20color%3A%20var(--muted)%3B%20margin-top%3A%208px%3B%20font-family%3A%20ui-monospace%2C%20monospace%3B%20%7D%0A%20%20.templates%20%7B%20display%3A%20grid%3B%20grid-template-columns%3A%20repeat(auto-fit%2C%20minmax(300px%2C%201fr))%3B%20gap%3A%2016px%3B%20%7D%0A%20%20.tpl%20%7B%20border%3A%201px%20solid%20var(--line)%3B%20border-radius%3A%2016px%3B%20overflow%3A%20hidden%3B%20background%3A%20white%3B%20%7D%0A%20%20.tpl%20.thumb%20%7B%20height%3A%20200px%3B%20border-bottom%3A%201px%20solid%20var(--line)%3B%20%7D%0A%20%20.tpl%20iframe%20%7B%20width%3A%20100%25%3B%20height%3A%20100%25%3B%20border%3A%200%3B%20%7D%0A%20%20.tpl%20.meta%20%7B%20padding%3A%2014px%2018px%3B%20display%3A%20flex%3B%20justify-content%3A%20space-between%3B%20align-items%3A%20center%3B%20%7D%0A%20%20.tpl%20h3%20%7B%20margin%3A%200%3B%20font-size%3A%2016px%3B%20%7D%0A%20%20.tpl%20a%20%7B%20color%3A%20var(--accent)%3B%20text-decoration%3A%20none%3B%20font-size%3A%2013px%3B%20font-weight%3A%20600%3B%20%7D%0A%20%20.pricing%20%7B%20display%3A%20grid%3B%20grid-template-columns%3A%20repeat(auto-fit%2C%20minmax(220px%2C%201fr))%3B%20gap%3A%2016px%3B%20%7D%0A%20%20.tier%20%7B%20border%3A%201px%20solid%20var(--line)%3B%20border-radius%3A%2016px%3B%20padding%3A%2024px%3B%20background%3A%20white%3B%20%7D%0A%20%20.tier%20h3%20%7B%20margin%3A%200%3B%20%7D%0A%20%20.tier%20.price-big%20%7B%20font-size%3A%2032px%3B%20font-weight%3A%20700%3B%20margin%3A%2012px%200%208px%3B%20letter-spacing%3A%20-0.02em%3B%20%7D%0A%20%20.tier%20ul%20%7B%20padding-left%3A%2018px%3B%20color%3A%20var(--muted)%3B%20font-size%3A%2014px%3B%20%7D%0A%20%20.tier%20li%20%7B%20margin%3A%205px%200%3B%20%7D%0A%20%20footer%20%7B%20padding%3A%2048px%200%3B%20color%3A%20var(--muted)%3B%20font-size%3A%2014px%3B%20text-align%3A%20center%3B%20%7D%0A">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="canonical" href="https://github.com/razel369/asset-forge-bundle">
 </head>
 <body>
 <header class="hero">
@@ -41,16 +53,16 @@
     <p class="sub">3 layouts, each in plain HTML and JSX. Pick one, swap your copy, ship.</p>
     <div class="templates">
     <div class="tpl">
-      <div class="thumb"><iframe src="../templates/html/minimal.html" loading="lazy"></iframe></div>
-      <div class="meta"><h3>Minimal</h3><a href="../templates/html/minimal.html" target="_blank">Open ↗</a></div>
+      <div class="thumb"><iframe src="templates/html/minimal.html" loading="lazy"></iframe></div>
+      <div class="meta"><h3>Minimal</h3><a href="templates/html/minimal.html" target="_blank">Open ↗</a></div>
     </div>
     <div class="tpl">
-      <div class="thumb"><iframe src="../templates/html/bold.html" loading="lazy"></iframe></div>
-      <div class="meta"><h3>Bold</h3><a href="../templates/html/bold.html" target="_blank">Open ↗</a></div>
+      <div class="thumb"><iframe src="templates/html/bold.html" loading="lazy"></iframe></div>
+      <div class="meta"><h3>Bold</h3><a href="templates/html/bold.html" target="_blank">Open ↗</a></div>
     </div>
     <div class="tpl">
-      <div class="thumb"><iframe src="../templates/html/magazine.html" loading="lazy"></iframe></div>
-      <div class="meta"><h3>Magazine</h3><a href="../templates/html/magazine.html" target="_blank">Open ↗</a></div>
+      <div class="thumb"><iframe src="templates/html/magazine.html" loading="lazy"></iframe></div>
+      <div class="meta"><h3>Magazine</h3><a href="templates/html/magazine.html" target="_blank">Open ↗</a></div>
     </div></div>
   </div>
 </section>
@@ -92,6 +104,24 @@
           <li>Priority email support</li>
         </ul>
       </div>
+      <div class="tier">
+        <h3>Mega Pack</h3>
+        <p style="color:var(--muted);margin:8px 0 0;">Everything + roadmap</p>
+        <div class="price-big">$149 <span style="font-size:13px;color:var(--muted);">one-time</span></div>
+        <ul>
+          <li>All current packs</li>
+          <li>Upcoming variant bundles (4 icon styles)</li>
+          <li>Vote on next pack contents</li>
+          <li>Direct email support</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top: 24px; padding: 16px 24px; background: var(--soft); border-radius: 12px; display: inline-block;">
+      <p style="margin: 0; color: var(--ink); font-size: 14px;">
+        ✨ <strong>Tip:</strong> If you can't buy yet,
+        <a href="https://github.com/sponsors/razel369" style="color: var(--accent); font-weight: 600; text-decoration: none;">sponsor this project</a>
+        on GitHub — every sponsor pays for a future pack.
+      </p>
     </div>
   </div>
 </section>

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://razel369.github.io/asset-forge-bundle/sitemap.xml
+
+User-agent: GPTBot
+Allow: /

@@ -38,8 +38,7 @@ const CSS = `
   .tpl .meta { padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; }
   .tpl h3 { margin: 0; font-size: 16px; }
   .tpl a { color: var(--accent); text-decoration: none; font-size: 13px; font-weight: 600; }
-  .pricing { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  @media (max-width: 720px) { .pricing { grid-template-columns: 1fr; } }
+  .pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
   .tier { border: 1px solid var(--line); border-radius: 16px; padding: 24px; background: white; }
   .tier h3 { margin: 0; }
   .tier .price-big { font-size: 32px; font-weight: 700; margin: 12px 0 8px; letter-spacing: -0.02em; }
@@ -92,8 +91,20 @@ const html = `<!doctype html>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Asset Forge — design assets for indie hackers</title>
 <meta name="description" content="60 icons · 12 illustrations · 3 landing templates. Made by an AI under tight constraints. MIT for open-source, $29 for commercial.">
+<meta name="keywords" content="svg icons, illustrations, landing templates, indie hackers, design assets, saas">
+<meta name="author" content="Asset Forge Agent">
+<meta property="og:title" content="Asset Forge — 75 design assets for indie builders">
+<meta property="og:description" content="60 SVG icons, 12 illustrations, 3 landing templates. Hand-tuned by an AI, MIT for open-source, $29 for commercial.">
+<meta property="og:image" content="og/og-bundle.svg">
+<meta property="og:url" content="https://github.com/razel369/asset-forge-bundle">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Asset Forge — 75 design assets">
+<meta name="twitter:description" content="60 SVG icons, 12 illustrations, 3 landing templates. $29 Indie Pack.">
+<meta name="twitter:image" content="og/og-bundle.svg">
 <link rel="stylesheet" href="data:text/css,${encodeURIComponent(CSS)}">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="canonical" href="https://github.com/razel369/asset-forge-bundle">
 </head>
 <body>
 <header class="hero">
@@ -165,6 +176,24 @@ const html = `<!doctype html>
           <li>Priority email support</li>
         </ul>
       </div>
+      <div class="tier">
+        <h3>Mega Pack</h3>
+        <p style="color:var(--muted);margin:8px 0 0;">Everything + roadmap</p>
+        <div class="price-big">$149 <span style="font-size:13px;color:var(--muted);">one-time</span></div>
+        <ul>
+          <li>All current packs</li>
+          <li>Upcoming variant bundles (4 icon styles)</li>
+          <li>Vote on next pack contents</li>
+          <li>Direct email support</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top: 24px; padding: 16px 24px; background: var(--soft); border-radius: 12px; display: inline-block;">
+      <p style="margin: 0; color: var(--ink); font-size: 14px;">
+        ✨ <strong>Tip:</strong> If you can't buy yet,
+        <a href="https://github.com/sponsors/razel369" style="color: var(--accent); font-weight: 600; text-decoration: none;">sponsor this project</a>
+        on GitHub — every sponsor pays for a future pack.
+      </p>
     </div>
   </div>
 </section>
