@@ -1,28 +1,25 @@
 # Asset Forge — Indie Icon Pack
 
-60 hand-tuned SVG icons for indie hackers, SaaS builders, and micro-startups.
-Crafted by AI under tight design constraints: 24×24 grid, 1.6 stroke weight,
-single-color (uses `currentColor`), fully accessible with `<title>` labels.
+> **75 design assets** authored by an AI assistant under tight constraints
+> (no human help, no auth, no crypto wallet): 60 icons, 12 illustrations,
+> 3 landing templates. MIT for open-source, $29 for commercial.
+
+**Repo:** <https://github.com/razel369/asset-forge-bundle>
+**Live preview:** `npm run dev` then open `http://localhost:4173`
+
+---
 
 ## What's inside
 
-- **60 icons** across 6 categories
-- **Single-color, stroke-based** — recolor with one CSS rule (`color: ...`)
-- **Tiny** — most files under 600 bytes
-- **Standard 24×24 viewBox** — drop into any React, Vue, Svelte, or plain HTML
-- **Inline-ready** — paste, don't fetch another request
-- **MIT licensed** for code-style use; commercial use requires a license below
+| Pack | Quantity | Path |
+|------|---------:|------|
+| Icon pack (60) | 6 categories, stroke-based | `icons/` |
+| Illustration pack (12) | empty-state + hero scenes | `illustrations/` |
+| Landing templates (3) | HTML + React JSX each | `templates/` |
 
-## Categories
-
-| Folder       | Icons | Themes                                     |
-|--------------|------:|--------------------------------------------|
-| `tech/`      |    10 | Server, cloud, GPU, network, security      |
-| `business/`  |    10 | Briefcase, charts, team, deals             |
-| `finance/`   |    10 | Wallet, currency, invoices, banking        |
-| `dev/`       |    10 | Code, git, packaging, deployment           |
-| `marketing/` |    10 | Outreach, notifications, growth            |
-| `ai/`        |    10 | Brain, spark, agent, model, voice          |
+Every asset is hand-composed geometry (no AI-image generation). Icons are
+24×24, 1.6 stroke weight, single-color (`currentColor`), and each file is
+under 600 bytes.
 
 ## Usage
 
@@ -31,7 +28,7 @@ single-color (uses `currentColor`), fully accessible with `<title>` labels.
 ```
 
 ```jsx
-import Code from "./icons/dev/code.svg"; // or paste inline
+import Code from "./icons/dev/code.svg";   // or paste inline
 <Code className="text-indigo-600 w-5 h-5" />
 ```
 
@@ -41,9 +38,22 @@ import Code from "./icons/dev/code.svg"; // or paste inline
 svg { width: 1.25rem; height: 1.25rem; }
 ```
 
+## Regenerate
+
+```bash
+npm run build
+```
+
+This runs:
+
+- `scripts/generate-icons.mjs` → 60 icons
+- `scripts/generate-illustrations.mjs` → 12 illustrations
+- `scripts/build-templates.mjs` → 3 templates
+- `scripts/build-site.mjs` → aggregator landing page
+
 ## License & Pricing
 
-See [`LICENSE.md`](./LICENSE.md). Short version:
+See [`LICENSE.md`](./LICENSE.md).
 
 | Use case                                | Required license                                |
 |-----------------------------------------|-------------------------------------------------|
@@ -53,14 +63,9 @@ See [`LICENSE.md`](./LICENSE.md). Short version:
 | Commercial product / SaaS (any team)    | **Studio Pack — $99 one-time**                  |
 | Reselling or redistribution             | **Forbidden without written permission**        |
 
-Contact: <your-email-here> (replace before publishing).
+Contact: <hello@assetforge.dev> (replace before going to production).
 
-Buy: <link-to-gumroad-here>
+## Status
 
-## Regenerate
-
-The pack is deterministic. Tweak `scripts/generate-icons.mjs` and run:
-
-```bash
-node scripts/generate-icons.mjs
-```
+See [`STATUS.md`](./STATUS.md) for what was built, what wasn't, and what's next.
+See [`DISTRIBUTION.md`](./DISTRIBUTION.md) for ready-to-paste launch copy.
