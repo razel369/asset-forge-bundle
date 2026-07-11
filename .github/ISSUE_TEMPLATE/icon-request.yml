@@ -1,0 +1,17 @@
+name: Icon request
+description: Tell me what icon you need.
+title: "[Icon] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    attributes:
+      label: What icon do you need?
+      description: A one-liner is enough.
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Category
+      options: [tech, business, finance, dev, marketing, ai]
+    validations:
+      required: true
