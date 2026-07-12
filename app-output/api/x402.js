@@ -216,8 +216,31 @@ export async function paywallGuard(req, { resource, description, perCallUsdc = C
   if (txHash.startsWith("{")) {
     try { txHash = JSON.parse(txHash).txHash; } catch { /* fall through */ }
   }
+
+  // Stripe-paid receipts (afp_*) live in a separate in-memory ledger.
+  // Each receipt is single-use, 30-day expiry. No on-chain verification
+  // needed because the receipt was minted in our /api/webhook after a
+  // confirmed Stripe charge. The local ledger is the trust anchor for
+  // the prototype; production would put this in Upstash Redis.
+  if (txHash.startsWith("afp_")) {
+    const rec = STRIPE_PAID.get(txHash);
+    if (!rec) return { error: "Stripe receipt not found or expired" };
+    if (new Date(rec.expiresAt) < new Date()) return { error: "Stripe receipt expired" };
+    STRIPE_PAID.delete(txHash); // single-use
+    return {
+      ok: true,
+      receipt: {
+        receipt: txHash,
+        channel: "stripe",
+        amountCents: rec.amountCents,
+        paidAt: rec.paidAt,
+        tool: rec.tool,
+      },
+    };
+  }
+
   if (!/^0x[0-9a-fA-F]{64}$/.test(txHash)) {
-    return { error: "X-Payment must be a 0x-prefixed 64-hex tx hash" };
+    return { error: "X-Payment must be a 0x-prefixed 64-hex tx hash (on-chain USDC) or afp_<id> (Stripe)" };
   }
 
   // First check the local receipt cache (cheap path). Then do the on-chain
