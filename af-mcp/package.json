@@ -1,0 +1,14 @@
+{
+  "name": "af-mcp",
+  "version": "0.1.0",
+  "description": "Asset Forge MCP server installer. One-line setup for Cursor / Claude Desktop / custom MCP clients.",
+  "bin": {
+    "af-mcp": "./installer.js"
+  },
+  "type": "module",
+  "files": ["installer.js", "README.md"],
+  "keywords": ["mcp", "x402", "asset-forge", "cursor", "claude", "agent"],
+  "license": "MIT",
+  "engines": { "node": ">=18" },
+  "dependencies": {}
+}
