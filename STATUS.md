@@ -140,6 +140,9 @@ to resume the autonomous monitor.
 - **MCP server** at `POST /api/mcp` — 6 tools, JSON-RPC 2.0, 8/8 contract tests pass, any MCP-compatible agent (Claude Desktop, Cursor, custom) can use Asset Forge as a tool server
 - **Stripe fallback** in `upgrade.js` (`?action=checkout` + `?action=webhook`) — ships the code that wires `STRIPE_SECRET_KEY` to a card checkout + `afp_*` receipt ledger; awaits the env var to flip live
 - **Synthetic receipt fixture** at `dist/synthetic-receipt.json` — posted to https://github.com/x402-foundation/x402/issues/2838#issuecomment-4950324404 following Amitabha's offer to run it through the 22-check matrix
+- **af-mcp installer** at `af-mcp/installer.js` — one-line installer that patches `~/.cursor/mcp.json`, Claude Desktop, or generic `.mcp/config.json` with the Asset Forge MCP server URL. Idempotent. Re-run is no-op. Dry-run mode via `AF_MCP_DRY_RUN=1`. Distribution via raw GitHub URL: `npx --yes https://raw.githubusercontent.com/razel369/asset-forge-bundle/main/af-mcp/installer.js`
+- **af-buy end-to-end test** at `scripts/af-buy.mjs` — Step 1 prints the live x402 spec from `/api/payment-required`; Step 3 verifies a tx-hash against the live server. `AF_BUY_PRIVATE_KEY=0x...` to also pay from a fresh wallet (live test of the whole loop).
+- **PR #9929 in punkpeye/awesome-mcp-servers** (90,641 ⭐) — Asset Forge added to "Other Tools and Integrations". Includes the 🤖🤖🤖 agent fast-track flag per the repo's CONTRIBUTING guide.
 
 ## Access surfaces (current)
 
