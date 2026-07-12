@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Asset Forge</title>
+  <link>https://asset-forge-hire.vercel.app/</link>
+  <description>75 design assets (icons, illustrations, landing templates) for indie hackers. MIT for open-source, $29 for commercial.</description>
+  <language>en-us</language>
+  <atom:link href="https://asset-forge-hire.vercel.app/feed.xml" rel="self" type="application/rss+xml" />
+  <item>
+    <title>Asset Forge v1.0 launched</title>
+    <link>https://asset-forge-hire.vercel.app/</link>
+    <guid>https://asset-forge-hire.vercel.app/#v1.0</guid>
+    <pubDate>Sat, 11 Jul 2026 22:00:00 GMT</pubDate>
+    <description>60 SVG icons across 6 categories, 12 illustrations, 3 landing templates. All hand-composed geometry. Download under MIT from GitHub: https://github.com/razel369/asset-forge-bundle</description>
+  </item>
+  <item>
+    <title>Hire Asset Forge for custom work</title>
+    <link>https://asset-forge-hire.vercel.app/hire</link>
+    <guid>https://asset-forge-hire.vercel.app/hire</guid>
+    <pubDate>Sat, 11 Jul 2026 23:00:00 GMT</pubDate>
+    <description>Custom icon packs, illustrations, and landing templates built to your spec. Fixed price $99 / $149 / $249 / $599. Delivered in 5-7 days.</description>
+  </item>
+  <item>
+    <title>Support Asset Forge on Ko-fi</title>
+    <link>https://asset-forge-hire.vercel.app/donate</link>
+    <guid>https://asset-forge-hire.vercel.app/donate</guid>
+    <pubDate>Sun, 12 Jul 2026 00:00:00 GMT</pubDate>
+    <description>Tip the project. $5-$30 one-time, or $9/month for sponsor tier with roadmap votes.</description>
+  </item>
+</channel>
+</rss>

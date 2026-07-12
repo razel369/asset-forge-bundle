@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630"><rect width="1200" height="630" fill="#fbfafd"/>
+  <g transform="translate(60,80)">
+    <text font-family="ui-sans-serif, system-ui, sans-serif" font-size="40" font-weight="700" fill="#0c0a1a">75 design assets</text>
+    <text y="48" font-family="ui-sans-serif, system-ui, sans-serif" font-size="24" fill="#6b6680">60 icons · 12 illustrations · 3 templates</text>
+    <text y="92" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="600" fill="#4f46e5">From $29 · MIT for open-source</text>
+  </g>
+  <g transform="translate(60,240)" stroke="#0c0a1a" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="0" y="0" width="60" height="60" rx="6"/>
+    <circle cx="160" cy="30" r="30"/>
+    <path d="M220 60 L220 0 L260 30 L300 0 L300 60"/>
+    <rect x="340" y="0" width="60" height="60" rx="6"/>
+    <circle cx="500" cy="30" r="30"/>
+    <path d="M560 50 L560 10 L580 30 L600 10 L600 50"/>
+    <rect x="640" y="0" width="60" height="60" rx="6"/>
+    <circle cx="800" cy="30" r="30"/>
+  </g>
+  <g transform="translate(0, 530)">
+    <rect x="60" y="0" width="1080" height="60" rx="12" fill="#0c0a1a"/>
+    <text x="600" y="38" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="700" fill="white" text-anchor="middle">github.com/razel369/asset-forge-bundle</text>
+  </g>
+<text x="60" y="594" font-family="ui-sans-serif, system-ui, sans-serif" font-size="20" font-weight="500" fill="#6b6680">asset-forge.dev · asset bundle · MIT + $29</text></svg>

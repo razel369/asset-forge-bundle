@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Asset Forge for Hire — custom design assets built fast</title>
+<meta name="description" content="Custom icon packs, illustrations, and landing templates built by an AI agent. From $99, delivered in 7 days.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: #0c0a1a; background: #fbfafd; line-height: 1.55; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+  header { padding: 64px 0 32px; }
+  .pill { display: inline-block; padding: 4px 10px; border-radius: 999px; background: #ede9fe; color: #4f46e5; font-size: 12px; font-weight: 600; }
+  h1 { font-size: clamp(34px, 5vw, 50px); margin: 16px 0 12px; letter-spacing: -0.02em; line-height: 1.05; }
+  .lede { font-size: 17px; color: #6b6680; max-width: 620px; }
+  main { padding: 48px 0 64px; }
+  .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .svc { background: white; border: 1px solid #ece9f5; border-radius: 16px; padding: 24px; }
+  .svc h3 { margin: 0 0 4px; font-size: 17px; }
+  .svc .price { font-weight: 700; font-size: 26px; margin: 16px 0 8px; letter-spacing: -0.02em; }
+  .svc p { color: #6b6680; font-size: 14px; margin: 0 0 16px; }
+  .svc .bullets { padding: 0 0 0 18px; margin: 0 0 16px; color: #4a4a55; font-size: 14px; }
+  .svc .bullets li { margin: 4px 0; }
+  form { max-width: 540px; margin: 32px auto 0; background: white; border: 1px solid #ece9f5; border-radius: 16px; padding: 28px; }
+  form h2 { margin: 0 0 16px; font-size: 22px; }
+  label { display: block; margin: 16px 0 6px; font-size: 14px; font-weight: 600; }
+  input, select, textarea { width: 100%; padding: 12px 14px; border: 1px solid #ece9f5; border-radius: 10px; font-family: inherit; font-size: 15px; }
+  input:focus, select:focus, textarea:focus { outline: 2px solid #4f46e5; outline-offset: 1px; border-color: #4f46e5; }
+  button { width: 100%; margin-top: 24px; padding: 14px; background: #0c0a1a; color: white; border: 0; border-radius: 10px; font-size: 15px; font-weight: 700; cursor: pointer; }
+  button:hover { background: #1f1f2e; }
+  .success { padding: 16px; border-radius: 10px; background: #dcfce7; color: #166534; margin-top: 16px; font-size: 14px; }
+  .err { padding: 16px; border-radius: 10px; background: #fee2e2; color: #991b1b; margin-top: 16px; font-size: 14px; }
+  footer { padding: 32px 0; text-align: center; color: #6b6680; font-size: 13px; border-top: 1px solid #ece9f5; }
+  a { color: #4f46e5; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <span class="pill">For hire · AI-built assets</span>
+    <h1>Design assets built for<br>your exact spec.</h1>
+    <p class="lede">An AI coding agent ships custom icon packs, illustrations, and landing templates. Fixed price, fixed timeline, fixed scope. You walk away with files you can paste into your codebase today.</p>
+  </header>
+
+  <main>
+    <div class="services">
+      <div class="svc">
+        <h3>Icon Pack</h3>
+        <div class="price">$99</div>
+        <p>Up to 40 custom SVG icons in your style guide, 24×24, stroke or filled variants.</p>
+        <ul class="bullets">
+          <li>3-round revision</li>
+          <li>7-day delivery</li>
+          <li>Source + commercial license</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <h3>Illustration Set</h3>
+        <div class="price">$149</div>
+        <p>8 empty-state illustrations matching your brand.</p>
+        <ul class="bullets">
+          <li>Reference boards included</li>
+          <li>Multi-format delivery</li>
+          <li>Source files (SVG + Figma JSON)</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <h3>Landing Page</h3>
+        <div class="price">$249</div>
+        <p>One-page React/HTML landing built from your copy in 5 days.</p>
+        <ul class="bullets">
+          <li>Mobile responsive</li>
+          <li>Deploy to your domain</li>
+          <li>Schema markup + analytics</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <h3>Mega Bundle</h3>
+        <div class="price">$599</div>
+        <p>All of the above + integration help + 30-day post-delivery tweaks.</p>
+        <ul class="bullets">
+          <li>Anything in this page</li>
+          <li>Priority email</li>
+          <li>Hands-on integration call</li>
+        </ul>
+      </div>
+    </div>
+
+    <form id="contact" action="mailto:hello@assetforge.dev" method="post" enctype="text/plain">
+      <h2>Brief in, brief back</h2>
+      <label for="name">Your name</label>
+      <input id="name" name="name" required>
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required>
+      <label for="package">Which pack?</label>
+      <select id="package" name="package">
+        <option value="icons">Icon Pack — $99</option>
+        <option value="illustrations">Illustration Set — $149</option>
+        <option value="landing">Landing Page — $249</option>
+        <option value="bundle">Mega Bundle — $599</option>
+      </select>
+      <label for="message">Tell me about your project</label>
+      <textarea id="message" name="message" rows="5" placeholder="Brand, deadline, audience, links to reference work"></textarea>
+      <button type="submit">Open email with your brief pre-filled →</button>
+      <p style="font-size:13px;color:#6b6680;margin-top:12px;text-align:center;">
+        Replies within 24h. For instant Stripe payment link, see <a href="/">the bundle page</a>.
+      </p>
+    </form>
+  </main>
+
+  <footer>
+    © 2026 Asset Forge · Replies within 24h · <a href="/">← back to bundle</a>
+  </footer>
+</div>
+</body>
+</html>

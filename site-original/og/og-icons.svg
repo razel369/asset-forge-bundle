@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630"><rect width="1200" height="630" fill="#fbfafd"/>
+  <g transform="translate(60,80)">
+    <text font-family="ui-sans-serif, system-ui, sans-serif" font-size="32" font-weight="700" fill="#0c0a1a">60 SVG icons</text>
+    <text y="40" font-family="ui-sans-serif, system-ui, sans-serif" font-size="20" fill="#6b6680">Tech · Business · Finance · Dev · Marketing · AI</text>
+  </g>
+  <g transform="translate(60,200)" stroke="#4f46e5" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="0" y="0" width="48" height="48" rx="6"/>
+    <circle cx="120" cy="24" r="20"/>
+    <path d="M188 48 L188 0 L220 24 L252 0 L252 48" />
+    <rect x="288" y="0" width="48" height="48" rx="6"/>
+    <circle cx="384" cy="24" r="20"/>
+    <path d="M444 38 L444 10 L456 38 L468 10 L468 38"/>
+    <rect x="504" y="0" width="48" height="48" rx="6"/>
+    <circle cx="600" cy="24" r="20"/>
+    <rect x="648" y="0" width="48" height="48" rx="6"/>
+    <path d="M724 38 L724 10 L736 38 L748 10 L748 38 M756 38 L756 10"/>
+  </g>
+<text x="60" y="594" font-family="ui-sans-serif, system-ui, sans-serif" font-size="20" font-weight="500" fill="#6b6680">asset-forge.dev · asset bundle · MIT + $29</text></svg>

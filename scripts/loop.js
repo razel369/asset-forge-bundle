@@ -32,21 +32,32 @@ function snapshot() {
     } catch {}
   }
   try {
+    // icons/<category>/<slug>.svg AND icons/<category>/<slug>/<slug>.svg AND icons/<category>/<slug>.filled.svg (etc.)
     for (const cat of readdirSync(join(ROOT, "icons"))) {
       try {
-        const files = readdirSync(join(ROOT, "icons", cat)).filter(f => f.endsWith(".svg"));
-        assets += files.length;
+        const sub = statSync(join(ROOT, "icons", cat));
+        if (sub.isDirectory()) {
+          for (const file of readdirSync(join(ROOT, "icons", cat))) {
+            if (file.endsWith(".svg")) assets++;
+          }
+        }
       } catch {}
     }
   } catch {}
   try {
-    assets += readdirSync(join(ROOT, "illustrations")).filter(f => f.endsWith(".svg")).length;
+    for (const file of readdirSync(join(ROOT, "illustrations"))) {
+      if (file.endsWith(".svg")) assets++;
+    }
   } catch {}
   try {
-    assets += readdirSync(join(ROOT, "templates/jsx")).filter(f => f.endsWith(".jsx")).length;
+    for (const file of readdirSync(join(ROOT, "templates/jsx"))) {
+      if (file.endsWith(".jsx")) assets++;
+    }
   } catch {}
   try {
-    assets += readdirSync(join(ROOT, "templates/html")).filter(f => f.endsWith(".html")).length;
+    for (const file of readdirSync(join(ROOT, "templates/html"))) {
+      if (file.endsWith(".html")) assets++;
+    }
   } catch {}
   return { stars, watch, forks, open, assets, downloads };
 }

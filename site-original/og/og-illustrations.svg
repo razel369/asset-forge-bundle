@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630"><rect width="1200" height="630" fill="#fbfafd"/>
+  <g transform="translate(60,80)">
+    <text font-family="ui-sans-serif, system-ui, sans-serif" font-size="32" font-weight="700" fill="#0c0a1a">12 illustrations</text>
+    <text y="40" font-family="ui-sans-serif, system-ui, sans-serif" font-size="20" fill="#6b6680">Empty states · hero scenes · ready-to-ship</text>
+  </g>
+  <g transform="translate(60,200)" stroke="#0c0a1a" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="100" cy="240" rx="80" ry="8"/>
+    <path d="M40 80 L120 50 L200 80 L200 200 L120 230 L40 200 Z"/>
+    <circle cx="320" cy="100" r="60"/>
+    <path d="M260 200 L260 240 L380 240 L380 200" />
+    <path d="M460 80 L460 240 M460 240 L520 240 L520 100"/>
+    <circle cx="540" cy="140" r="20" fill="#0c0a1a"/>
+  </g>
+<text x="60" y="594" font-family="ui-sans-serif, system-ui, sans-serif" font-size="20" font-weight="500" fill="#6b6680">asset-forge.dev · asset bundle · MIT + $29</text></svg>

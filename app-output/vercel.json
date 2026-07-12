@@ -1,0 +1,20 @@
+{
+  "rewrites": [
+    { "source": "/hire", "destination": "/hire.html" },
+    { "source": "/donate", "destination": "/donate.html" },
+    { "source": "/support", "destination": "/donate.html" },
+    { "source": "/sponsor", "destination": "/donate.html" },
+    { "source": "/thanks", "destination": "/thanks.html" },
+    { "source": "/api-docs", "destination": "/api.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    }
+  ]
+}
