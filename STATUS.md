@@ -143,6 +143,8 @@ to resume the autonomous monitor.
 - **af-mcp installer** at `af-mcp/installer.js` — one-line installer that patches `~/.cursor/mcp.json`, Claude Desktop, or generic `.mcp/config.json` with the Asset Forge MCP server URL. Idempotent. Re-run is no-op. Dry-run mode via `AF_MCP_DRY_RUN=1`. Distribution via raw GitHub URL: `npx --yes https://raw.githubusercontent.com/razel369/asset-forge-bundle/main/af-mcp/installer.js`
 - **af-buy end-to-end test** at `scripts/af-buy.mjs` — Step 1 prints the live x402 spec from `/api/payment-required`; Step 3 verifies a tx-hash against the live server. `AF_BUY_PRIVATE_KEY=0x...` to also pay from a fresh wallet (live test of the whole loop).
 - **PR #9929 in punkpeye/awesome-mcp-servers** (90,641 ⭐) — Asset Forge added to "Other Tools and Integrations". Includes the 🤖🤖🤖 agent fast-track flag per the repo's CONTRIBUTING guide.
+- **6 x402 buyer-project comments posted** via `scripts/engage-buyers.mjs` — 6 distinct repos, each comment frames Asset Forge as a free working seller fixture (facilitator-free, vendor-neutral, replay-protected). Repos: `Br0ski777/x402-agent-tools#3`, `Roger-Base/x402-agent-starter#2`, `dedrick007/x402-agent#1`, `luisvid/x402-agentic-research#1`, `Satnam-Satoshi/Satoshi-Langar#5`, `openmobilehub/credentagent#18`. Plus the original `arein/x402-agent-wallet#1` (posted manually).
+- **Buyer-targets roster** at `docs/buyer-targets.md` — 20+ x402 buyer projects indexed across tier-1 (direct intent), tier-2 (adjacent), tier-3 (curated lists). Each entry is a comment or PR opportunity where Asset Forge is offered as a *free working fixture*, not as a paid product — the funnel converts from there.
 
 ## Access surfaces (current)
 
