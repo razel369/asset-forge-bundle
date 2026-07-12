@@ -73,6 +73,25 @@ async function main() {
     if (r.status !== 402) throw new Error(`status ${r.status}`);
   });
 
+  await check("all payment-requirement descriptions are ≤500 chars (CDP facilitator cap)", async () => {
+    const pr = await (await fetch(`${BASE}/api/payment-required`)).json();
+    for (const offer of pr.endpoints) {
+      for (const a of offer.accepts) {
+        const descChars = [...a.description].length;
+        if (descChars > 500) throw new Error(`accepts[].description ${descChars} chars > 500: "${a.description}"`);
+      }
+    }
+    // Also guard resource.description if present
+    for (const offer of pr.endpoints) {
+      for (const a of offer.accepts) {
+        if (a.resource?.description) {
+          const descChars = [...a.resource.description].length;
+          if (descChars > 500) throw new Error(`resource.description ${descChars} chars > 500`);
+        }
+      }
+    }
+  });
+
   await check("OPTIONS preflight on paid endpoint is supported", async () => {
     const r = await fetch(`${BASE}/api/og?title=Hello`, { method: "OPTIONS" });
     if (r.status !== 200 && r.status !== 204) throw new Error(`status ${r.status}`);
