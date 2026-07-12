@@ -36,6 +36,48 @@
       "endpoint": "/api/v1/tools",
       "status": 404,
       "body": "{\"error\":\"not_found\",\"error_code\":\"NOT_FOUND\",\"message\":\"Not found: POST /api/v1/tools\",\"request_id\":\"0742963bd54b6b8278c0301e20aae5d4\",\"suggested_action\":\"use_different_tool\",\"documentation_url\":\"https://apibase.pro/frameworks#rest\"}"
+    },
+    {
+      "ts": "2026-07-12T17:31:15.355Z",
+      "repo": "Br0ski777/x402-agent-tools",
+      "issue": 3,
+      "status": "ok",
+      "url": "https://github.com/Br0ski777/x402-agent-tools/issues/3#issuecomment-4952108331"
+    },
+    {
+      "ts": "2026-07-12T17:31:31.465Z",
+      "repo": "Roger-Base/x402-agent-starter",
+      "issue": 2,
+      "status": "ok",
+      "url": "https://github.com/Roger-Base/x402-agent-starter/issues/2#issuecomment-4952109157"
+    },
+    {
+      "ts": "2026-07-12T17:48:16.120Z",
+      "repo": "dedrick007/x402-agent",
+      "issue": 1,
+      "status": "ok",
+      "url": "https://github.com/dedrick007/x402-agent/issues/1#issuecomment-4952159437"
+    },
+    {
+      "ts": "2026-07-12T17:48:38.645Z",
+      "repo": "luisvid/x402-agentic-research",
+      "issue": 1,
+      "status": "ok",
+      "url": "https://github.com/luisvid/x402-agentic-research/issues/1#issuecomment-4952160549"
+    },
+    {
+      "ts": "2026-07-12T17:48:55.788Z",
+      "repo": "Satnam-Satoshi/Satoshi-Langar",
+      "issue": 5,
+      "status": "ok",
+      "url": "https://github.com/Satnam-Satoshi/Satoshi-Langar/issues/5#issuecomment-4952161386"
+    },
+    {
+      "ts": "2026-07-12T17:49:12.971Z",
+      "repo": "openmobilehub/credentagent",
+      "issue": 18,
+      "status": "ok",
+      "url": "https://github.com/openmobilehub/credentagent/issues/18#issuecomment-4952162247"
     }
   ]
 }
