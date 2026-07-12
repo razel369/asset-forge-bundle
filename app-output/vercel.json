@@ -5,7 +5,9 @@
     { "source": "/support", "destination": "/donate.html" },
     { "source": "/sponsor", "destination": "/donate.html" },
     { "source": "/thanks", "destination": "/thanks.html" },
-    { "source": "/api-docs", "destination": "/api.html" }
+    { "source": "/api-docs", "destination": "/api.html" },
+    { "source": "/.well-known/x402", "destination": "/api/payment-required" },
+    { "source": "/.well-known/x402.json", "destination": "/api/payment-required" }
   ],
   "headers": [
     {
@@ -13,7 +15,8 @@
       "headers": [
         { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
         { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Cache-Control", "value": "public, max-age=300" }
       ]
     }
   ]

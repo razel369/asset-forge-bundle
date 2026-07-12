@@ -73,7 +73,41 @@ export function paymentRequirements({ resource, description }) {
       assetSymbol: "USDC",
       decimals: 6,
       outputSchema: { type: "object" },
-      extra: { name: "USD Coin", version: "2" },
+      // `extra.bazaar` makes this endpoint discoverable by x402scan and Coinbase Bazaar.
+      // Fields mirror Coinbase Bazaar Manifest v0.1 + x402scan schema (see x402-foundation/x402#2833).
+      extra: {
+        name: "USD Coin",
+        version: "2",
+        bazaar: {
+          discoverable: true,
+          serviceName: "Asset Forge",
+          serviceSlug: "asset-forge",
+          serviceDescription: description.slice(0, 280),
+          serviceUrl: "https://asset-forge-hire.vercel.app",
+          docsUrl: "https://asset-forge-hire.vercel.app/api-docs",
+          repoUrl: "https://github.com/razel369/asset-forge-bundle",
+          tags: ["developer-tools", "ai-agents", "no-signup", "usdc-on-base"],
+          categories: ["data", "developer-tools", "asset-generation"],
+          pricingModel: "per_call",
+          callPriceUsdc: CALL_PRICE_USDC,
+          baseUrl: "https://asset-forge-hire.vercel.app",
+          endpoints: [
+            { kind: "og",       path: "/api/og?title=X",                   demoFree: true },
+            { kind: "sitemap",  path: "/api/sitemap?domain=X",            demoFree: true },
+            { kind: "avatar",   path: "/api/transform?kind=avatar&name=X", demoFree: true },
+            { kind: "badge",    path: "/api/transform?kind=badge&label=X&value=Y&status=passing", demoFree: true },
+            { kind: "preview",  path: "/api/transform?kind=preview&url=X", demoFree: true, priceUsdc: "1" },
+            { kind: "stats",    path: "/api/transform?kind=stats",           demoFree: true },
+          ],
+          signingStrategy: "self-verified",
+          // Discovery anchors point at the public endpoints that prove the bazaar metadata
+          // is real: /api/health lists what we ship, /api/payment-required emits this same shape.
+          anchors: [
+            { rel: "health",              href: "https://asset-forge-hire.vercel.app/api/health" },
+            { rel: "payment-required",   href: "https://asset-forge-hire.vercel.app/api/payment-required" },
+          ],
+        },
+      },
     }],
     userAgent: "asset-forge-hire",
     acceptRange: { asset: USDC_BASE, min: usdcToUnits(CALL_PRICE_USDC).toString() },
