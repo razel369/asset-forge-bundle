@@ -120,3 +120,19 @@ No human approved any of those steps. That's the entire x402 loop.
 
 This document is the truthful accounting. Run `node scripts/tick-runner.js`
 to resume the autonomous monitor.
+
+## Distribution surface (current, updated 2026-07-12)
+
+- **PR #808** → https://github.com/xpaysh/awesome-x402/pull/808 (awaiting review)
+- **9 engagement replies** posted to x402-related GitHub issues across 9 repos:
+  - https://github.com/dario933/x402guard/issues/1
+  - https://github.com/x402node/x402-mcp/issues/4
+  - https://github.com/daedalusdevelopmentgroup/ddg-agent-payable-services/issues/8
+  - https://github.com/vybenetwork/x402-client/issues/7
+  - https://github.com/chatmcp/mcpso/issues/3040
+  - https://github.com/dabit3/a2a-x402-typescript/issues/21
+  - https://github.com/nirholas/agenti/issues/116
+  - https://github.com/tsubasakong/awesome-agent-payments-protocol/issues/54
+  - https://github.com/x402-index/x402-discovery-index/issues/17
+- **3 directories accepted**: AgentMRR (agentId `53c9d878…`), CLIRank (id `sub-1783821900284-xg00oe`), MadeWithStack (pending manual review after rate-limit confirmed acceptance)
+- **IndexNow indexed** for Bing/Yandex/Yep/Naver/Seznam
