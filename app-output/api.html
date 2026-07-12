@@ -112,6 +112,16 @@ curl "https://asset-forge-hire.vercel.app/api/og?title=Hello" \
     <h3>/api/payment-required</h3>
     <p><span class="verb get">GET</span> Public. Returns the x402 payment-requirements object: recipient wallet, asset, amount, scheme. Read this BEFORE paying.</p>
   </div>
+
+  <div class="endpoint">
+    <h3>/api/transform</h3>
+    <p><span class="verb get">GET</span> Multi-mode transform endpoint:</p>
+    <pre>curl "https://asset-forge-hire.vercel.app/api/transform?kind=avatar&name=Mary+Smith&size=128&demo=1"
+curl "https://asset-forge-hire.vercel.app/api/transform?kind=preview&url=https://stripe.com&demo=1"
+curl "https://asset-forge-hire.vercel.app/api/transform?kind=badge&label=build&value=passing&status=passing&demo=1"
+curl "https://asset-forge-hire.vercel.app/api/transform?kind=stats"</pre>
+    <p>Modes: <code>preview</code> (live URL fetch + OG meta parsing, $1 USDC), <code>avatar</code> (initials SVG, $0.01), <code>badge</code> (shields-style badges, $0.01), <code>stats</code> (free traffic counters).</p>
+  </div>
 </section>
 
 <section>

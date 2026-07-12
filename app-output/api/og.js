@@ -9,6 +9,13 @@ import { paywallGuard } from "./x402.js";
 const FREE_TIER = 3000;
 const TMP_FILE = "/tmp/asset-forge-keys.json";
 
+const CORS = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "GET, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type, X-Payment",
+  "Access-Control-Expose-Headers": "X-Payment-Receipt, X-Payment-Required",
+};
+
 function escapeXml(s) {
   return String(s).replace(/[<>&'"]/g, c => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", "'": "&apos;", '"': "&quot;" }[c]));
 }
@@ -50,6 +57,13 @@ function buildSvg(t, s, a, u) {
 }
 
 export default async function handler(req, res) {
+  // CORS preflight passes through with the headers a browser will need.
+  if (req.method === "OPTIONS") {
+    for (const [k, v] of Object.entries(CORS)) res.setHeader(k, v);
+    return res.status(204).end();
+  }
+  for (const [k, v] of Object.entries(CORS)) res.setHeader(k, v);
+
   try {
     if (!diskLoaded) { loadFromDisk(); diskLoaded = true; }
 
@@ -60,7 +74,6 @@ export default async function handler(req, res) {
     const isDemo = q.demo === "1" || q.demo === 1;
     const ledger = STORE.ledger;
 
-    // Paid path: x402 / USDC on Base
     if (!isDemo) {
       const guard = await paywallGuard(req, {
         resource: "https://asset-forge-hire.vercel.app/api/og",

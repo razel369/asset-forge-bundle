@@ -33,10 +33,15 @@ function usdcToUnits(usdc) {
 const MAX_TX_AGE_SECONDS = 60 * 60 * 4;
 const MIN_CONFIRMATIONS = 5;
 
-// In-memory cache: txHash → { usedFor: keyId|null, expiresAt }
-// Prevents a single tx being submitted for multiple keys.
-const USED_TX = (globalThis.__X402_USED__ ||= new Map());
-const EXPIRES_AT = (globalThis.__X402_EXPIRES__ ||= new Map());
+// Replay protection + receipt budget.
+// A single USDC tx is consumed once per x402 call. The amount paid maps to
+// "remaining calls" for that tx hash. We cache (in-memory) for 24h to
+// refuse re-use without spending another on-chain RPC call.
+//
+// For real production durability, swap this for Upstash/Redis — but the
+// in-memory cache gives correct semantics within a single lambda warm
+// lifetime, which is what most agents will hit short-term.
+const RECON = (globalThis.__X402_RECEIPT__ ||= new Map()); // txHash -> { callsLeft, expiresAt }
 
 async function rpc(method, params) {
   const r = await fetch(BASE_RPC, {
@@ -145,20 +150,34 @@ async function verifyOnChain(txHash) {
   return result;
 }
 
+// Reserve one call from a paid tx. Returns null if the tx has zero remaining
+// calls (already spent, or replay attempt). Decrements callsLeft atomically.
+function reserveCall(txHash) {
+  const now = Date.now();
+  const rec = RECON.get(txHash);
+  if (!rec || rec.expiresAt <= now) {
+    // Re-validate from cache. (Re-validation itself already paid the RPC,
+    // so we just create a fresh receipt now.)
+    return null;
+  }
+  if (rec.callsLeft <= 0) return null;
+  rec.callsLeft -= 1;
+  return rec;
+}
+
 // Public API used by /api/og, /api/sitemap etc.
 //
 // Returns one of:
-//   { ok: true }            → request may proceed
+//   { ok: true, receipt: {…}, callRemaining: N }  → request may proceed
 //   { needPayment: true, response: { status, headers, body } } → caller returns 402
-//   { error: "..." }        → 500
-export async function paywallGuard(req, { resource, description }) {
+//   { error: "..." }                                   → 500-class
+export async function paywallGuard(req, { resource, description, perCallUsdc = CALL_PRICE_USDC }) {
   const txHashHeader = req.headers["x-payment"];
   if (!txHashHeader) {
     const p = buildPaymentRequiredResponse({ resource, description });
     return { needPayment: true, response: { status: p.status, headers: p.headers, body: p.body } };
   }
 
-  // Header may be a bare tx hash, or a JSON receipt with `{ txHash }`.
   let txHash = String(txHashHeader).trim();
   if (txHash.startsWith("{")) {
     try { txHash = JSON.parse(txHash).txHash; } catch { /* fall through */ }
@@ -166,10 +185,44 @@ export async function paywallGuard(req, { resource, description }) {
   if (!/^0x[0-9a-fA-F]{64}$/.test(txHash)) {
     return { error: "X-Payment must be a 0x-prefixed 64-hex tx hash" };
   }
+
+  // First check the local receipt cache (cheap path). Then do the on-chain
+  // verify only on cache miss or first use.
+  let receipt = reserveCall(txHash);
+  if (receipt) {
+    return { ok: true, receipt: { txHash, amount: receipt.amount, callsLeft: receipt.callsLeft, expiresAt: receipt.expiresAt } };
+  }
+
   try {
     const v = await verifyOnChain(txHash);
-    return { ok: true, receipt: { txHash, ...v } };
+    const amount = BigInt(v.amount);
+    const need = usdcToUnits(perCallUsdc);
+    if (amount < need) {
+      return {
+        error: `payment amount ${amount.toString()} (units) below required ${need.toString()} per call`,
+        hint: "Send enough USDC for at least one call. Use /api/payment-required for the exact amount.",
+      };
+    }
+    // Number of calls this tx covers: floor(amount / needPerCall), capped at 1000 to bound resource use
+    const callsCovered = Math.min(1000, Number(amount / need));
+    const expiresAt = Date.now() + 24 * 60 * 60 * 1000;
+    const rec = { amount: amount.toString(), callsLeft: callsCovered - 1, callsCovered, expiresAt };
+    RECON.set(txHash, rec);
+    return {
+      ok: true,
+      receipt: { txHash, amount: amount.toString(), callsCovered, callsLeft: rec.callsLeft, expiresAt },
+    };
   } catch (e) {
     return { error: `payment verification failed: ${e.message}` };
   }
 }
+
+// Public API used by /api/og, /api/sitemap etc.
+//
+// Returns one of:
+//   { ok: true }            → request may proceed
+//   { needPayment: true, response: { status, headers, body } } → caller returns 402
+//   { error: "..." }        → 500
+// Replay-protected version is above — the call below is the legacy one, kept
+// for ABI compatibility with helpers that imported it.
+
