@@ -1,0 +1,41 @@
+{
+  "ts": "2026-07-12T02:05:05.490Z",
+  "results": [
+    {
+      "directory": "MadeWithStack",
+      "endpoint": "/api/v1/submit",
+      "status": 200,
+      "body": "skipped - rate-limited in prev run; submission was accepted (201) or pending review"
+    },
+    {
+      "directory": "AgentMRR",
+      "endpoint": "/api/agents/submit",
+      "status": 201,
+      "body": "{\"agent\":{\"activeSubscriptions\":0,\"agentId\":\"53c9d878-eba6-474b-b563-aa53b839390a\",\"categories\":[\"development\",\"ai\",\"design\"],\"connectionStatus\":null,\"country\":null,\"currency\":\"USD\",\"description\":\"API for AI agents that returns SVG OG cards, sitemap.xml/robots.txt/llms.txt bundles, initials avatars, and shields.io-style status badges. Live x402 payment rail: $0.01 USDC per call on Base, paid in 40"
+    },
+    {
+      "directory": "CLIRank",
+      "endpoint": "/api/apis/submit",
+      "status": 201,
+      "body": "{\"success\":true,\"submission\":{\"id\":\"sub-1783821900284-xg00oe\",\"name\":\"Asset Forge\",\"category\":\"Developer Tools\",\"subcategory\":\"API Marketplaces\",\"description\":\"API for AI agents that returns SVG OG cards, sitemap.xml/robots.txt/llms.txt bundles, initials avatars, and shields.io-style status badges. Live x402 payment rail: $0.01 USDC per call on Base, paid in 402 → retry flow. Free demo mode at ?de"
+    },
+    {
+      "directory": "AgentShare",
+      "endpoint": "/api/v1/products/submit",
+      "status": 400,
+      "body": "{\"status\":\"error\",\"error\":{\"code\":\"UNKNOWN_ERROR\",\"message\":\"URL host is not an allowed marketplace or retailer. See documentation for supported domains.\"},\"request_id\":\"c08646b2-44bb-44aa-9b2a-75f44848bfaf\",\"docs_for_agent_url\":\"https://agentshare.dev/agent.json\",\"protocol_url\":\"https://agentshare.dev/api/v1/protocol\",\"for_agents_url\":\"https://agentshare.dev/for-agents\",\"examples_url\":\"https://ag"
+    },
+    {
+      "directory": "x402-list",
+      "endpoint": "/api/v1/submit",
+      "status": 400,
+      "body": "{\"error\":{\"code\":400,\"message\":\"Valid email is required; Service name is required; Valid website URL is required; Service URL on a free hosting or dev-tunnel domain (vercel.app) is not allowed. Please submit from your own domain.; At least one endpoint path is required\"}}"
+    },
+    {
+      "directory": "APIbase",
+      "endpoint": "/api/v1/tools",
+      "status": 404,
+      "body": "{\"error\":\"not_found\",\"error_code\":\"NOT_FOUND\",\"message\":\"Not found: POST /api/v1/tools\",\"request_id\":\"0742963bd54b6b8278c0301e20aae5d4\",\"suggested_action\":\"use_different_tool\",\"documentation_url\":\"https://apibase.pro/frameworks#rest\"}"
+    }
+  ]
+}

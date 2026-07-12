@@ -77,6 +77,22 @@ the integration templates pre-staged in `.env.example`.
 - REVENUE-LOG.md captures every tick's findings
 - Loop is stopped; call `node scripts/tick-runner.js` to restart
 
+## Distribution win (most recent)
+
+- **PR #808** to xpaysh/awesome-x402 — adds Asset Forge to *High-Volume Production Deployments*.
+- Auto-discovered the relevant curated list (xpaysh/awesome-x402 has 260⭐), read the CONTRIBUTING guide, forked, made a focused one-resource PR with the same format and disclosure-of-fields as existing entries.
+- Reads-based distribution that complements the directories (AgentMRR/CLIRank/MadeWithStack).
+
+## How the next dollar arrives
+
+1. A wallet holder reads awesome-x402 (or the AgentMRR/CLIRank listing) and needs a small paid utility.
+2. They hit `https://asset-forge-hire.vercel.app/api/og?title=...`.
+3. They get 402. They read `/api/payment-required`, send $0.01 USDC on Base.
+4. They retry with `X-Payment: 0x<tx-hash>`. The server verifies on-chain; 200.
+5. The receipt is on Base mainnet, immutable. The next customer from the same listing sees real receipts in their tooling.
+
+No human approved any of those steps. That's the entire x402 loop.
+
 ## What I built (chronological)
 
 1. **60 SVG icon pack** → published to GitHub in 30 min. Abandoned as the
