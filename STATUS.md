@@ -2,6 +2,7 @@
 
 > Live production: https://asset-forge-hire.vercel.app/
 > API docs: https://asset-forge-hire.vercel.app/api-docs
+> MCP endpoint: https://asset-forge-hire.vercel.app/api/mcp (6 tools, JSON-RPC)
 
 ## Pivot — API + x402 (this is what shipped)
 
@@ -136,3 +137,18 @@ to resume the autonomous monitor.
   - https://github.com/x402-index/x402-discovery-index/issues/17
 - **3 directories accepted**: AgentMRR (agentId `53c9d878…`), CLIRank (id `sub-1783821900284-xg00oe`), MadeWithStack (pending manual review after rate-limit confirmed acceptance)
 - **IndexNow indexed** for Bing/Yandex/Yep/Naver/Seznam
+- **MCP server** at `POST /api/mcp` — 6 tools, JSON-RPC 2.0, 8/8 contract tests pass, any MCP-compatible agent (Claude Desktop, Cursor, custom) can use Asset Forge as a tool server
+- **Stripe fallback** in `upgrade.js` (`?action=checkout` + `?action=webhook`) — ships the code that wires `STRIPE_SECRET_KEY` to a card checkout + `afp_*` receipt ledger; awaits the env var to flip live
+- **Synthetic receipt fixture** at `dist/synthetic-receipt.json` — posted to https://github.com/x402-foundation/x402/issues/2838#issuecomment-4950324404 following Amitabha's offer to run it through the 22-check matrix
+
+## Access surfaces (current)
+
+| Surface | URL | Auth | Notes |
+|---------|-----|------|-------|
+| HTTP x402 | `https://asset-forge-hire.vercel.app/api/*` | X-Payment header with USDC tx hash | Self-verified via Base RPC, 3,000/day/demo free |
+| MCP | `https://asset-forge-hire.vercel.app/api/mcp` | X-Payment header | 6 tools, JSON-RPC 2.0, CORS-enabled |
+| Stripe (off) | `https://asset-forge-hire.vercel.app/api/upgrade?action=checkout` | STRIPE_SECRET_KEY env | Card checkout for non-crypto buyers; needs the env var set |
+| Stripe webhook (off) | `https://asset-forge-hire.vercel.app/api/upgrade?action=webhook` | Stripe-Signature | Mints `afp_*` receipts into the in-memory ledger after `checkout.session.completed` |
+| Discovery | `https://asset-forge-hire.vercel.app/.well-known/x402[.json]` | none | x402-spec compliant bazaar manifest |
+| Discovery | `https://asset-forge-hire.vercel.app/api/payment-required` | none | Live x402 requirements spec |
+| API docs | `https://asset-forge-hire.vercel.app/api-docs` | none | Curl-first, 10 endpoints listed |
